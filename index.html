@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <style>
+
+
+        .product-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            max-width: 40%;
+            height: auto;
+        }
+      
+
+
+     .product-details {
+    width: calc(60% - 40px); /* Adjusted width */
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-left: -20px; /* Pull the details box to the left */
+}
+
+        .color-selector {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .buy-button {
+            padding: 13px 30px;
+            border-radius: 15px; /* Different shape */
+            background-color: rgb(174, 3, 174); /* Violet color */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .buy-button:hover {
+            background-color: purple; /* Change color on hover */
+        }
+        .src{
+            width:500px;
+            height:500px;
+        }
+        .h3{
+            color:rgb(100, 246, 100);
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping</h1>
+    <div class="product-container">
+        <div class="product-image">
+            <img id="productImage" src="t-shirt-design-2336850_640.jpg" alt="Red T-Shirt" class="src">
+        </div>
+        <div class="product-details">
+            <h1>Casual T shirt </h1>
+            <h2>$15.00</h2>
+            <h3>30% OFF</h3>
+
+            <p>Wrangler is an American manufacture of jeans and other clothing items, particularly workwear.</p>
+            <div class="color-selector">
+                <div class="color-option" style="background-color: red;"></div>
+                <div class="color-option" style="background-color: blue;"></div>
+                <div class="color-option" style="background-color: green;"></div>
+                <div class="color-option" style="background-color: pink;"></div>
+            </div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+            <br><br>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">S</option>
+                <option value="medium">M</option>
+                <option value="large">L</option>
+                <option value="large">XL</option>
+                <option value="large">XXL</option>
+            </select>
+            <br><br>
+            <button onclick="addToCart()" class="buy-button">Buy</button>
+        </div>
+    </div>
+    <script>
+        // Add your JavaScript code here
+        const colorOptions = document.querySelectorAll('.color-option');
+        const productImage = document.getElementById('productImage');
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const color = option.style.backgroundColor;
+                // Update image source based on color selection
+                if (color === 'red') {
+                    productImage.src = 'p2073327.jpg';
+                } else if (color === 'blue') {
+                    productImage.src = 't-shirt-design-2336850_640.jpg';
+                } else if (color === 'green') {
+                    productImage.src = 'bbbcd089-e5c9-49d9-9300-0fb176c675031561025677233-Jockey-Men-Green-Solid-Round-Neck-T-shirt-8161561025675768-1.webp';
+                } else if (color === 'pink') {
+                    productImage.src = '126701302_g1.webp';
+                }
+            });
+        });
+
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const size = document.getElementById('size').value;
+            // Add logic to add the selected product to the cart
+            alert(`Added ${quantity} ${size} t-shirt to cart.`);
+        }
+    </script>
+</body>
+</html>

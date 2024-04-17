@@ -1,0 +1,51 @@
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.product-image {
+    max-width: 40%;
+    height: auto;
+}
+
+.body{
+    background-color: aqua;
+}
+
+.product-details {
+width: calc(60% - 40px); /* Adjusted width */
+padding: 20px;
+background-color: #f9f9f9;
+margin-left: -20px; /* Pull the details box to the left */
+}
+
+.color-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.buy-button {
+    padding: 13px 30px;
+    border-radius: 15px; /* Different shape */
+    background-color: rgb(174, 3, 174); /* Violet color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.buy-button:hover {
+    background-color: purple; /* Change color on hover */
+}
+.src{
+    width:500px;
+    height:500px;
+}
+.h3{
+    color:rgb(100, 246, 100);
+}
